@@ -14,8 +14,10 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.new(user_params)
 
+    @user = User.new
+    @user.email = params["email"]
+    @user.password = params["password"]
     if @user.save
       render json: @user, status: :created, location: @user
     else
@@ -43,9 +45,5 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
-    def user_params
-      params.fetch(:user, {})
-    end
 
 end
