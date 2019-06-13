@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate_request
   # GET /users
   def index
     @users = User.all
