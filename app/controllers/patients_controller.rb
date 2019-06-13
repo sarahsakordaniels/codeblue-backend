@@ -1,5 +1,6 @@
 class PatientsController < ApplicationController
   before_action :set_patient, only: [:show, :update, :destroy]
+  skip_before_action :authenticate_request
 
   # GET /patients
   def index
@@ -46,6 +47,6 @@ class PatientsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def patient_params
-      params.fetch(:patient, {})
+      params.require(:patient).permit(:name, :age, :history)
     end
 end

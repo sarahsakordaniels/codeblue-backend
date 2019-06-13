@@ -4,6 +4,7 @@ class CreateCodes < ActiveRecord::Migration[5.2]
         t.string :begin_time
         t.string :end_time
         t.string :patient_status
+        t.references :patient
       t.timestamps
     end
   end

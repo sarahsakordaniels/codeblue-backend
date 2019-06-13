@@ -5,6 +5,7 @@ class CreateVitalsets < ActiveRecord::Migration[5.2]
       t.string :pulse
       t.string :temperature
       t.string :spo2
+      t.references :patient
       t.timestamps
     end
   end

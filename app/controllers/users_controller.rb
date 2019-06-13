@@ -14,8 +14,8 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-
     @user = User.new
+    @user.name = params["name"]
     @user.email = params["email"]
     @user.password = params["password"]
     if @user.save

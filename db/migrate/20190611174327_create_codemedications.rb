@@ -4,6 +4,8 @@ class CreateCodemedications < ActiveRecord::Migration[5.2]
         t.string :drug
         t.string :dose
         t.string :time
+        t.references :code
+
       t.timestamps
     end
   end

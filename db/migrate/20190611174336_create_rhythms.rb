@@ -4,6 +4,8 @@ class CreateRhythms < ActiveRecord::Migration[5.2]
         t.string :rhythm
         t.string :time
         t.boolean :pulse
+        t.references :code
+
       t.timestamps
     end
   end
