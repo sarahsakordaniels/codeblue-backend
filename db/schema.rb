@@ -19,16 +19,20 @@ ActiveRecord::Schema.define(version: 2019_06_11_205100) do
     t.string "drug"
     t.string "dose"
     t.string "time"
+    t.bigint "code_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["code_id"], name: "index_codemedications_on_code_id"
   end
 
   create_table "codes", force: :cascade do |t|
     t.string "begin_time"
     t.string "end_time"
     t.string "patient_status"
+    t.bigint "patient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["patient_id"], name: "index_codes_on_patient_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -69,15 +73,19 @@ ActiveRecord::Schema.define(version: 2019_06_11_205100) do
     t.string "rhythm"
     t.string "time"
     t.boolean "pulse"
+    t.bigint "code_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["code_id"], name: "index_rhythms_on_code_id"
   end
 
   create_table "shocks", force: :cascade do |t|
     t.string "time"
     t.string "energy"
+    t.bigint "code_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["code_id"], name: "index_shocks_on_code_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -93,8 +101,10 @@ ActiveRecord::Schema.define(version: 2019_06_11_205100) do
     t.string "pulse"
     t.string "temperature"
     t.string "spo2"
+    t.bigint "patient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["patient_id"], name: "index_vitalsets_on_patient_id"
   end
 
   add_foreign_key "patient_medications", "medications"
