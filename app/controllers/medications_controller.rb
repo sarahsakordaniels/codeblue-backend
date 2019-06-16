@@ -1,6 +1,6 @@
 class MedicationsController < ApplicationController
   before_action :set_medication, only: [:show, :update, :destroy]
-
+  skip_before_action :authenticate_request
   # GET /medications
   def index
     @medications = Medication.all

@@ -1,6 +1,6 @@
 class ShocksController < ApplicationController
   before_action :set_shock, only: [:show, :update, :destroy]
-
+   skip_before_action :authenticate_request
   # GET /shocks
   def index
     @shocks = Shock.all

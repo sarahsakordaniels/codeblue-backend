@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   resources :medications
   resources :patients
   resources :users
-  post 'authenticate', to: 'authentication#authenticate'
+  post 'authenticate', to: "authentication#authenticate"
 end

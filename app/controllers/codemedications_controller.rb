@@ -1,6 +1,6 @@
 class CodemedicationsController < ApplicationController
   before_action :set_codemedication, only: [:show, :update, :destroy]
-
+  skip_before_action :authenticate_request
   # GET /codemedications
   def index
     @codemedications = Codemedication.all

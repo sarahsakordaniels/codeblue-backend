@@ -16,7 +16,11 @@ class PatientsController < ApplicationController
 
   # POST /patients
   def create
-    @patient = Patient.new(patient_params)
+    @patient = Patient.new
+    @patient.name = params["name"]
+    @patient.age = params["age"]
+    @patient.history = params["history"]
+    @patient.user_id = params["user_id"]
 
     if @patient.save
       render json: @patient, status: :created, location: @patient
@@ -47,6 +51,6 @@ class PatientsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def patient_params
-      params.require(:patient).permit(:name, :age, :history)
+      params.require(:patient).permit(:name, :age, :history, :user_id)
     end
 end

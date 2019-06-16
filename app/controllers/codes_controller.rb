@@ -1,5 +1,6 @@
 class CodesController < ApplicationController
   before_action :set_code, only: [:show, :update, :destroy]
+  skip_before_action :authenticate_request
 
   # GET /codes
   def index
@@ -46,6 +47,6 @@ class CodesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def code_params
-      params.fetch(:code, {})
+      params.require(:code).permit(:begin_time, :end_time, :patient_status, :patient_id)
     end
 end

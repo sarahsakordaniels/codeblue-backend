@@ -1,6 +1,6 @@
 class VitalsetsController < ApplicationController
   before_action :set_vitalset, only: [:show, :update, :destroy]
-
+  skip_before_action :authenticate_request
   # GET /vitalsets
   def index
     @vitalsets = Vitalset.all

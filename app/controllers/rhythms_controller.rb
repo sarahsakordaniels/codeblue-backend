@@ -1,6 +1,6 @@
 class RhythmsController < ApplicationController
   before_action :set_rhythm, only: [:show, :update, :destroy]
-
+ skip_before_action :authenticate_request
   # GET /rhythms
   def index
     @rhythms = Rhythm.all

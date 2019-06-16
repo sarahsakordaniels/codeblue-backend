@@ -33,6 +33,7 @@
 #             end
 #           end
 #         end
+Code.create(begin_time: "05:00", end_time: "05:15", patient_status: "Dead", patient_id: 3)
 Patient.create(name: "Bob Brown", age: 50, history:"DM2, MI, CVA", user_id: 2)
 Patient.create(name: "Denise Jones", age: 72, history:"CABG, ETOH", user_id: 2)
 Patient.create(name: "Bob Brown", age: 58, history:"HLD, MI, CABG, Amphetamines", user_id: 2)
