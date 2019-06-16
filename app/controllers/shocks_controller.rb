@@ -46,6 +46,6 @@ class ShocksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def shock_params
-      params.fetch(:shock, {})
+      params.require(:shock).permit(:time, :energy, :code_id)
     end
 end
