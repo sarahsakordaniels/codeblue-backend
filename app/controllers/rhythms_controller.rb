@@ -46,6 +46,6 @@ class RhythmsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def rhythm_params
-      params.fetch(:rhythm, {})
+      params.require(:rhythm).permit(:type, :time, :pulse, :code_id)
     end
 end

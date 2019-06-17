@@ -46,6 +46,6 @@ class CodemedicationsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def codemedication_params
-      params.fetch(:codemedication, {})
+      params.require(:codemedication).permit(:drug, :dose, :time, :code_id)
     end
 end

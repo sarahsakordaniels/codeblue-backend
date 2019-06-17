@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2019_06_11_205100) do
   end
 
   create_table "rhythms", force: :cascade do |t|
-    t.string "rhythm"
+    t.string "rhythm_type"
     t.string "time"
     t.boolean "pulse"
     t.bigint "code_id"
