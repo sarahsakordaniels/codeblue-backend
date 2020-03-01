@@ -28,6 +28,21 @@ To set this API up in your local envinronment...
 
 # Application In Action
 
+## Login
+![](login.gif)
+
+---
+
+## Calculates weight-based medications quickly
+![](medication.gif)
+
+---
+
+## Directs user to appropriate interventions based on patient status
+![](rhythm.gif)
+
+---
+
 Check out this video for a demonstration of how CodeCourse works.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=H9hf3JyUeNU
